@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iSum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>iSum</h1>
+        <aside>
+            <h1>iSum</h1>
+            <p>Compute your Grade</p>
+            <div class="display">
+                <h2 >TOTAl: <span id="tmarks"> </span> </h2>
+                <h2>MEAN: <span id="mscore"> </span></h2>
+                <H2>GRADE: <span id="grade"> </span></H2>
+                <H2>TICKET: <span id="ticket"> </span></H2>
+            </div>
+        </aside>
+        <form action="" method="post" id="isum-form" >
+            <div class="input-group">
+                <input type="text" id="java" required placeholder="Java" class="form-control">
+            </div>
+            <div class="input-group">
+                <input type="text" id="ruby" required placeholder="Ruby" class="form-control">
+            </div>
+            <div class="input-group">
+                <input type="text" id="swift" required placeholder="Swift" class="form-control">
+            </div>
+            <div class="input-group">
+                <input type="text" id="cplus" required placeholder="C++" class="form-control">
+            </div>
+            <div class="input-group">
+                <input type="text" id="csharp"  placeholder="C#" class="form-control" required>
+            </div>
+            <input type="button" value="Calculate" class="btn" onclick="iSum()">
+        </form>
+    </div>
+<script >
+    
+    const iSum = () =>{
+        let java = document.getElementById('java').value;
+        let ruby = document.getElementById('ruby').value;
+        let swift = document.getElementById('swift').value;
+        let cplus = document.getElementById('cplus').value;
+        let csharp = document.getElementById('csharp').value;
+        let grade ="";
+        let ticket ="";
+        if (java =="" || ruby=="" || swift=="" || cplus=="" || csharp=="") {
+            alert('Invalid Entry!');
+        } else {
+            //computing the total marks
+        let tmarks = parseFloat(java)+ parseFloat(ruby)+ parseFloat(swift)+
+        parseFloat(cplus)+ parseFloat(csharp);
+         document.getElementById('tmarks').innerHTML= tmarks;
+        //computing the mean score
+        let mscore =(tmarks/500)*100;
+        document.getElementById('mscore').innerHTML= mscore;
+       
+        //Grading script
+        if (mscore <=100 && mscore >= 84) {
+            grade="A";
+        }else if (mscore <=83 && mscore>= 75) {
+             grade="B";
+        }else if (mscore <=74 && mscore>= 50) {
+             grade="C";
+        }else {
+             grade="F";
+             document.getElementById('ticket').style.backgroundColor="red";
+        }
+         document.getElementById('grade').innerHTML= grade;
+        //script for the comment ticket
+        if (mscore >= 50) {
+            ticket="Pass";
+            document.getElementById('ticket').innerHTML= ticket;
+            document.getElementById('ticket').style.backgroundColor="green";
+            document.getElementById('ticket').style.Color="white";
+        }else{
+            ticket="Fail";
+            document.getElementById('ticket').style.backgroundColor="red";
+            document.getElementById('ticket').style.Color="white";
+            document.getElementById('ticket').innerHTML= ticket;
+        }
+        }
+        
+       
+     }
+</script>
+
+
+</body>
+</html>

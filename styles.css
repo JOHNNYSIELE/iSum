@@ -1,0 +1,105 @@
+body{
+    background: teal;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper{
+    width: 850px;
+    height: 500px;
+    background: #000;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+.wrapper h1{
+    color: white;
+    text-align: center;
+    margin-bottom: -40px;
+    font-size: 45px;
+}
+aside{
+    width: 300px;
+    height: auto;
+    border: transparent;
+    border-left: none;
+    border-bottom: none;
+    border-top:5px turquoise groove;
+    border-right:5px turquoise groove;
+    float: right;
+    color: whitesmoke;
+    margin: 50px 50px 0 0;
+    transition: all 5s ease-in;
+    justify-content: center;
+}
+aside h1{
+    font-size: 42px;
+    text-align: center;
+    /*background: rgb(82, 39, 39);*/
+    margin-bottom: -40px;
+    animation: runme 1s infinite;
+}
+
+@keyframes runme{
+    0%{color: white;}
+    100%{color: rgb(22, 21, 21);}
+}
+aside p{
+    font-size: 30px;
+    color: teal;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+aside .display h2{
+    font-size: 30px;
+    color: teal;
+    margin-bottom: -10px;
+    text-transform: initial;
+}
+aside h2 span{
+    background: rgb(248, 246, 246);
+    color: rgb(12, 1, 1);
+     width: 100px;
+}
+form{
+    float: left;
+    margin: 50px 0 0 50px;
+    width: 400px;
+    height: auto;
+    color: white;
+    border-top:5px turquoise groove;
+}
+
+form input{
+    height: 45px;
+    color: white;
+    font-size: 28px;
+}
+form input:focus{
+       text-align: center;
+}
+form .form-control{
+    width: 300px;
+    background: transparent;
+    border: transparent;
+    border-radius: 2px;
+    border-bottom:2px turquoise solid;
+    transition: all 3s ease-in-out;
+    margin-bottom: 10px;
+}
+form .btn{
+    width: 300px;
+    height: 40px;
+    border: transparent;
+    border-radius: 2px;
+    background: turquoise;
+    transition: all 3s ease-in;
+    color: white;
+    font-size: 32px;
+}
+form .btn:hover{
+    background:teal;
+    color: rgb(255, 251, 251);
+    box-shadow:2px 6px 4px rgba(0, 128, 128,.5);
+    transition: all .5s ease-in-out;
+
+}
